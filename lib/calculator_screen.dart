@@ -162,137 +162,31 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                     mainAxisSpacing: 12, // Отступ по вертикали
                     crossAxisSpacing: 12, // Отступ по горизонтали
                     children: [
-                      // Ряд 1
-                      CalculatorFunctionButton(
-                        label: 'C',
-                        onTap: () {
-                          onButtonTap('C');
-                        },
+                      CalculatorFunctionButton(label: 'C', onTap: () { onButtonTap('C'); }),
+                      CalculatorFunctionButton(label: '+/-', onTap: () { onButtonTap('+/-'); }),
+                      CalculatorFunctionButton(label: '%', onTap: () { onButtonTap('%'); }),
+                      CalculatorOperatorButton(label: '÷', onTap: () { onButtonTap('÷'); }),
 
-                                             ),
-                      CalculatorFunctionButton(
-                        label: '+/-',
-                        onTap: () {
-                          onButtonTap('+/-');
-                        },
+                      CalculatorKeyButton(label: '7', onTap: () { onButtonTap('7'); }),
+                      CalculatorKeyButton(label: '8', onTap: () { onButtonTap('8'); }),
+                      CalculatorKeyButton(label: '9', onTap: () { onButtonTap('9'); }),
+                      CalculatorOperatorButton(label: '×', onTap: () { onButtonTap('×'); }),
 
-                                             ),
-                      CalculatorFunctionButton(
-                        label: '%',
-                        onTap: () {
-                          onButtonTap('%');
-                        },
+                      CalculatorKeyButton(label: '4', onTap: () { onButtonTap('4'); }),
+                      CalculatorKeyButton(label: '5', onTap: () { onButtonTap('5'); }),
+                      CalculatorKeyButton(label: '6', onTap: () { onButtonTap('6'); }),
+                      CalculatorOperatorButton(label: '−', onTap: () { onButtonTap('-'); }),
 
-                                             ),
-                      CalculatorOperatorButton(
-                        label: '÷',
-                        onTap: () {
-                          onButtonTap('÷');
-                        },
-                                                                ),
+                      CalculatorKeyButton(label: '1', onTap: () { onButtonTap('1'); }),
+                      CalculatorKeyButton(label: '2', onTap: () { onButtonTap('2'); }),
+                      CalculatorKeyButton(label: '3', onTap: () { onButtonTap('3'); }),
+                      CalculatorOperatorButton(label: '+', onTap: () { onButtonTap('+'); }),
 
-                      // Ряд 2
-                      CalculatorKeyButton(
-                        label: '7',
-                        onTap: () {
-                          onButtonTap('7');
-                        },
-                                                              ),
-                      CalculatorKeyButton(
-                        label: '8',
-                        onTap: () {
-                          onButtonTap('8');
-                        },
-                                                              ),
-                      CalculatorKeyButton(
-                        label: '9',
-                        onTap: () {
-                          onButtonTap("9");
-                        },
-                                                              ),
-                      CalculatorOperatorButton(
-                        label: '×',
-                        onTap: () {
-                          onButtonTap('×');
-                        },
-                                                                ),
-
-                      // Ряд 3
-                      CalculatorKeyButton(
-                        label: '4',
-                        onTap: () {
-                          onButtonTap('4');
-                        },
-                                                              ),
-                      CalculatorKeyButton(
-                        label: '5',
-                        onTap: () {
-                          onButtonTap('5');
-                        },
-                                                              ),
-                      CalculatorKeyButton(
-                        label: '6',
-                        onTap: () {
-                          onButtonTap('6');
-                        },
-                                                              ),
-                      CalculatorOperatorButton(
-                        label: '−',
-                        onTap: () {
-                          onButtonTap('-');
-                        },
-                                                                ),
-
-                      // Ряд 4
-                      CalculatorKeyButton(
-                        label: '1',
-                        onTap: () {
-                          onButtonTap('1');
-                        },
-                                                              ),
-                      CalculatorKeyButton(
-                        label: '2',
-                        onTap: () {
-                          onButtonTap('2');
-                        },
-                                                              ),
-                      CalculatorKeyButton(
-                        label: '3',
-                        onTap: () {
-                          onButtonTap('3');
-                        },
-                                                              ),
-                      CalculatorOperatorButton(
-                        label: '+',
-                        onTap: () {
-                          onButtonTap('+');
-                        },
-                                                                ),
-
-                      // Ряд 5
-                      StaggeredGridTile.count(
-                        crossAxisCellCount: 2,
-                        mainAxisCellCount: 1,
-                        child: CalculatorKeyButton(
-                          label: '0',
-                          onTap: () {
-                            onButtonTap('0');
-                          },
-                                                                    ),
-                      ),
-                      CalculatorKeyButton(
-                        label: '.',
-                        onTap: () {
-                          onButtonTap('.');
-                        },
-                                                              ),
-                      CalculatorOperatorButton(
-                        label: '=',
-                        onTap: () {
-                          onButtonTap('=');
-                        },
-                                                                ),
+                      StaggeredGridTile.count(crossAxisCellCount: 2, mainAxisCellCount: 1, child: CalculatorKeyButton(label: '0', onTap: () { onButtonTap('0'); })),
+                      CalculatorKeyButton(label: '.', onTap: () { onButtonTap('.'); }),
+                      CalculatorOperatorButton(label: '=', onTap: () { onButtonTap('='); }),
                     ],
+
                   ),
             ),
           ],

@@ -48,6 +48,41 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
                 match.start, match.end, inverted);
           }
           break;
+        case '%':
+          if (expression.isEmpty) return;
+
+          // Находим конструкцию: число оператор число
+          final regex = RegExp(r'(\d+\.?\d*)([+\-×÷])(\d+\.?\d*)$');
+          final match = regex.firstMatch(expression);
+
+          if (match != null) {
+            double first = double.parse(match.group(1)!);
+            String operator = match.group(2)!;
+            double second = double.parse(match.group(3)!);
+
+            double percentValue;
+
+            if (operator == '+' || operator == '-') {
+              // 100 + 8%  →  100 * 8 / 100
+              percentValue = first * second / 100;
+            } else {
+              // 100 × 8%  →  8 / 100
+              percentValue = second / 100;
+            }
+
+            String formatted = percentValue
+                .toStringAsFixed(10)
+                .replaceAll(RegExp(r'0+$'), '')
+                .replaceAll(RegExp(r'\.$'), '');
+
+            expression = expression.replaceRange(
+                match.start, match.end,
+                '${match.group(1)}$operator$formatted');
+          }
+
+          break;
+
+
 
         default:
           expression += value;
